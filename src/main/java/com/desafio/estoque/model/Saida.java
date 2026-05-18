@@ -25,10 +25,4 @@ public class Saida {
     @CreationTimestamp
     @Column(nullable = false)
     private java.time.LocalDateTime data_saida;
-
-    //@Column //produto? Quer dizer o nome do produto que vem de Produto.java?
-
-    //@Column //quantidade de Detalhe.java?
-
-    //@Column //valor_total de Entrada.java?
 }

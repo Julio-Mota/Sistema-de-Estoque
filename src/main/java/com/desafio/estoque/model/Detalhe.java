@@ -1,10 +1,14 @@
 package com.desafio.estoque.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Positive;
 import lombok.Getter;
@@ -25,9 +29,15 @@ public class Detalhe {
     @Positive
     private Integer quantidade;
 
-    //@Column //produto? Quer dizer o nome do produto que vem de Produto.java?
+    @Column(nullable = false)
+    @Positive
+    private BigDecimal valor;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_entrada")
+    private Entrada entrada;
 
-    // @Column //valor do que?
-
-    //@Column //entrada(referência) do que?
+    @ManyToOne
+    @JoinColumn(name = "id_produto")
+    private Produto produto;
 }

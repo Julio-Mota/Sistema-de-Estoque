@@ -1,10 +1,13 @@
 package com.desafio.estoque.dto.entrada;
 
-import java.math.BigDecimal;
+import java.util.List;
 
-import jakarta.validation.constraints.NotBlank;
+import com.desafio.estoque.dto.detalhe.DetalheRequest;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 
 public record EntradaRequest(
-    @NotBlank(message = "Valor total é obrigatório!")
-    BigDecimal valor_total
+    @NotEmpty
+    List<@Valid DetalheRequest> itens
 ) {}

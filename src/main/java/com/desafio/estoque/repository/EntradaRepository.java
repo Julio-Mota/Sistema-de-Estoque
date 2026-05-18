@@ -1,13 +1,13 @@
 package com.desafio.estoque.repository;
 
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.desafio.estoque.model.Entrada;
 
-public interface EntradaRepository extends JpaRepository<Entrada, BigDecimal> {
+public interface EntradaRepository extends JpaRepository<Entrada, Long> {
     
-    Optional<Entrada> findByValor_total(BigDecimal valor_total);
+    Optional<Entrada> findByItens(List itens);
 }

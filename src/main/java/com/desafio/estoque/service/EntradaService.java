@@ -18,11 +18,11 @@ public class EntradaService {
 
     public EntradaResponse entrarEntrada(EntradaRequest entradaRequest) {
         Entrada entrada = new Entrada(
-            entradaRequest.valor_total()
+            entradaRequest.itens()
         );
 
-        if (entradaRepository.findByValor_total(entradaRequest.valor_total()).isPresent()) {
-        throw new RuntimeException("O valor total já existe!");
+        if (entradaRequest.itens() == null || entradaRequest.itens().isEmpty()) {
+        throw new RuntimeException("A entrada deve ter pelo menos um item!");
         }
 
         Entrada entradaSalvo = entradaRepository.save(entrada);
