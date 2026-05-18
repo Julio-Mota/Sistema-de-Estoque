@@ -37,13 +37,13 @@ public class Produto {
 
     @Override
     public String toString() {
-        StringBuilder build = new StringBuilder();
-        build.append("Produtos{");
-        build.append(", id_produto=").append(id);
-        build.append(", nome=").append(nome);
-        build.append(", ativo=").append(ativo);
-        build.append(", saldo=").append(saldo);
-        build.append("}");
-        return build.toString();
+        StringBuilder produtoBuild = new StringBuilder();
+        produtoBuild.append("Produtos{");
+        produtoBuild.append(", id_produto=").append(id);
+        produtoBuild.append(", nome=").append(nome);
+        produtoBuild.append(", ativo=").append(ativo);
+        produtoBuild.append(", saldo=").append(saldo);
+        produtoBuild.append("}");
+        return produtoBuild.toString();
     }
 }

@@ -33,14 +33,18 @@ public class Entrada {
     @Positive
     private BigDecimal valor_total;
 
+    public Entrada(BigDecimal valor_total) {
+        this.valor_total = valor_total;
+    }
+
     @Override
     public String toString() {
-        StringBuilder build02 = new StringBuilder();
-        build02.append("Entradas{");
-        build02.append("id_entrada=").append(id);
-        build02.append(", data_entrada=").append(data_entrada);
-        build02.append(", valor_total=").append(valor_total);
-        build02.append("}");
-        return build02.toString();
+        StringBuilder entradaBuild = new StringBuilder();
+        entradaBuild.append("Entradas{");
+        entradaBuild.append("id_entrada=").append(id);
+        entradaBuild.append(", data_entrada=").append(data_entrada);
+        entradaBuild.append(", valor_total=").append(valor_total);
+        entradaBuild.append("}");
+        return entradaBuild.toString();
     }
 }
