@@ -23,8 +23,7 @@ public class EntradaService {
         }
 
         Entrada entrada = new Entrada(
-            entradaRequest.itens(),
-            entradaRequest.valor_total()
+            entradaRequest.itens()
         );
 
         Entrada entradaSalvo = entradaRepository.save(entrada);
