@@ -17,13 +17,15 @@ public class EntradaService {
     }
 
     public EntradaResponse entrarEntrada(EntradaRequest entradaRequest) {
-        Entrada entrada = new Entrada(
-            entradaRequest.itens()
-        );
 
         if (entradaRequest.itens() == null || entradaRequest.itens().isEmpty()) {
         throw new RuntimeException("A entrada deve ter pelo menos um item!");
         }
+
+        Entrada entrada = new Entrada(
+            entradaRequest.itens(),
+            entradaRequest.valor_total()
+        );
 
         Entrada entradaSalvo = entradaRepository.save(entrada);
         return new EntradaResponse(entradaSalvo);

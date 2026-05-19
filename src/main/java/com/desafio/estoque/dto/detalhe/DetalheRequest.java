@@ -8,9 +8,6 @@ import jakarta.validation.constraints.Positive;
 public record DetalheRequest(
 
     @NotNull
-    Long id_produto,
-
-    @NotNull
     @Positive
     Integer quantidade,
 

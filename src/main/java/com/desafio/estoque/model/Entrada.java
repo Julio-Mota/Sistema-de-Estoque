@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.desafio.estoque.dto.detalhe.DetalheRequest;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,10 +39,13 @@ public class Entrada {
     private BigDecimal valor_total;
 
     @OneToMany(mappedBy = "entrada", cascade = CascadeType.ALL)
-    private List<Detalhe> itens;
+    private List<DetalheRequest> itens;
 
-    public Entrada(List itens) {
+    public Entrada() {}
+
+    public Entrada(List<DetalheRequest> itens, BigDecimal valor_total) {
         this.itens = itens;
+        this.valor_total = valor_total;
     }
 
     @Override
