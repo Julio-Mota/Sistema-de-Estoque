@@ -1,7 +1,7 @@
 By: Júlio Mota
 
 
-Instruções para rodar este código:
+Instruções para testar este código:
 
 1. Instale este projeto pelo GitHub e descompacte em algum lugar de sua preferência no seu diretório.
 
