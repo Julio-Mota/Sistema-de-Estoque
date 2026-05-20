@@ -2,15 +2,20 @@ package com.desafio.estoque.service;
 
 import org.springframework.stereotype.Service;
 
+import com.desafio.estoque.dto.detalhe.DetalheRequest;
 import com.desafio.estoque.dto.entrada.EntradaRequest;
 import com.desafio.estoque.dto.entrada.EntradaResponse;
 import com.desafio.estoque.model.Entrada;
+import com.desafio.estoque.model.Produto;
 import com.desafio.estoque.repository.EntradaRepository;
+import com.desafio.estoque.repository.ProdutoRepository;
 
 @Service
 public class EntradaService {
     
     private final EntradaRepository entradaRepository;
+
+    private final ProdutoRepository produtoRepository;
 
     public EntradaService(EntradaRepository entradaRepository) {
         this.entradaRepository = entradaRepository;
@@ -25,6 +30,10 @@ public class EntradaService {
         Entrada entrada = new Entrada(
             entradaRequest.itens()
         );
+
+        Produto produto = produtoRepository.findById()
+
+        for (DetalheRequest itemRequest : entradaRequest.itens())
 
         Entrada entradaSalvo = entradaRepository.save(entrada);
         return new EntradaResponse(entradaSalvo);
