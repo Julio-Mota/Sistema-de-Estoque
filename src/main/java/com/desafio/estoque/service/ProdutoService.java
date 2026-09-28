@@ -17,13 +17,15 @@ public class ProdutoService {
     }
 
     public ProdutoResponse criarProduto(ProdutoRequest produtoRequest) {
-        Produto produto = new Produto(
-            produtoRequest.nome()
-        );
-
+        
         if (produtoRepository.findByNome(produtoRequest.nome()).isPresent()) {
-        throw new RuntimeException("O produto já existe!");
+        throw new IllegalArgumentException("O produto já existe!");
         }
+
+        Produto produto = new Produto(
+            produtoRequest.nome(),
+            produtoRequest.preco()
+        );
 
         Produto produtoSalvo = produtoRepository.save(produto);
         return new ProdutoResponse(produtoSalvo);

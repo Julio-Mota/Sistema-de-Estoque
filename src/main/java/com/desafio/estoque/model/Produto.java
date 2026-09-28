@@ -1,11 +1,14 @@
 package com.desafio.estoque.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,13 +29,20 @@ public class Produto {
     @Column(nullable = false)
     private Boolean ativo;
 
-    @Column
+    @Column(nullable = false)
     private Integer saldo;
 
-    public Produto(String nome) {
+    @Column(nullable = false)
+    @Positive(message = "O preço deverá ser maior que 0!")
+    private BigDecimal preco;
+
+    public Produto() {}
+
+    public Produto(String nome, BigDecimal preco) {
         this.nome = nome;
         this.ativo = true;
         this.saldo = 0;
+        this.preco = preco;
     }
 
     @Override
@@ -43,6 +53,7 @@ public class Produto {
         produtoBuild.append(", nome=").append(nome);
         produtoBuild.append(", ativo=").append(ativo);
         produtoBuild.append(", saldo=").append(saldo);
+        produtoBuild.append(", preco=").append(preco);
         produtoBuild.append("}");
         return produtoBuild.toString();
     }

@@ -39,8 +39,11 @@ public class Entrada {
     @OneToMany(mappedBy = "entrada", cascade = CascadeType.ALL)
     private List<Detalhe> itens;
 
-    public Entrada(List itens) {
+    public Entrada() {}
+
+    public Entrada(List<Detalhe> itens, BigDecimal valor_total) {
         this.itens = itens;
+        this.valor_total = valor_total;
     }
 
     @Override
