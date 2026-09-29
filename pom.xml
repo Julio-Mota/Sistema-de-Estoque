@@ -13,18 +13,25 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Controle de Estoque</name>
 	<description>Projeto para o Controle de Estoque</description>
-	<url/>
+	<url>https://github.com/Julio-Mota/estoque</url>
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+			<distribution>repo</distribution>
+		</license>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>Julio-Mota</id>
+			<name>Júlio Mota</name>
+			<url>https://github.com/Julio-Mota</url>
+		</developer>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<connection>scm:git:https://github.com/Julio-Mota/estoque.git</connection>
+		<developerConnection>scm:git:git@github.com:Julio-Mota/estoque.git</developerConnection>
+		<url>https://github.com/Julio-Mota/estoque</url>
 	</scm>
 	<properties>
 		<java.version>25</java.version>
