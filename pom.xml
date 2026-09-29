@@ -6,14 +6,14 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>4.0.6</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.desafio</groupId>
 	<artifactId>estoque</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Controle de Estoque</name>
+	<name>Sistema de Estoque</name>
 	<description>Projeto para o Controle de Estoque</description>
-	<url>https://github.com/Julio-Mota/estoque</url>
+	<url>https://github.com/Julio-Mota/sistema-de-estoque</url>
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -29,9 +29,9 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:https://github.com/Julio-Mota/estoque.git</connection>
-		<developerConnection>scm:git:git@github.com:Julio-Mota/estoque.git</developerConnection>
-		<url>https://github.com/Julio-Mota/estoque</url>
+		<connection>scm:git:https://github.com/Julio-Mota/sistema-de-estoque.git</connection>
+		<developerConnection>scm:git:git@github.com:Julio-Mota/sistema-de-estoque.git</developerConnection>
+		<url>https://github.com/Julio-Mota/sistema-de-estoque</url>
 	</scm>
 	<properties>
 		<java.version>25</java.version>
