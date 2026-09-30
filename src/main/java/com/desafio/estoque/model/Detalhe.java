@@ -17,19 +17,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Detalhe")
+@Table(name = "detalhe")
 public class Detalhe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detalhe")
-    private Long id;
+    private Long idDetalhe;
 
-    @Column(nullable = false)
+    @Column(name = "quantidade", nullable = false)
     @Positive
     private Integer quantidade;
 
-    @Column(nullable = false)
+    @Column(name = "valor", nullable = false)
     @Positive
     private BigDecimal valor;
     
