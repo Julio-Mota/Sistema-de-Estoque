@@ -26,11 +26,11 @@ public class Detalhe {
     private Long idDetalhe;
 
     @Column(name = "quantidade", nullable = false)
-    @Positive
+    @Positive(message = "A quantidade deverá ser maior que 0!")
     private Integer quantidade;
 
     @Column(name = "valor", nullable = false)
-    @Positive
+    @Positive(message = "O valor deverá ser maior que 0!")
     private BigDecimal valor;
     
     @ManyToOne

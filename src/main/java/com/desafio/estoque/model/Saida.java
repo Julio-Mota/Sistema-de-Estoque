@@ -1,5 +1,7 @@
 package com.desafio.estoque.model;
 
+import java.time.LocalDateTime;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
@@ -20,9 +22,9 @@ public class Saida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_saida")
-    private Long id;
+    private Long idSaida;
 
     @CreationTimestamp
-    @Column(nullable = false)
-    private java.time.LocalDateTime data_saida;
+    @Column(name = "data_saida", nullable = false)
+    private LocalDateTime dataSaida;
 }

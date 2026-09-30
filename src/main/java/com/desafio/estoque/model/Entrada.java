@@ -1,6 +1,7 @@
 package com.desafio.estoque.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,33 +27,33 @@ public class Entrada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_entrada")
-    private Long id;
+    private Long idEntrada;
 
     @CreationTimestamp
-    @Column(nullable = false)
-    private java.time.LocalDateTime data_entrada;
+    @Column(name = "data_entrada", nullable = false)
+    private LocalDateTime dataEntrada;
 
-    @Column(nullable = false)
-    @Positive
-    private BigDecimal valor_total;
+    @Column(name = "valor_total", nullable = false)
+    @Positive(message = "O valor total deverá ser maior que 0!")
+    private BigDecimal valorTotal;
 
     @OneToMany(mappedBy = "entrada", cascade = CascadeType.ALL)
     private List<Detalhe> itens;
 
     public Entrada() {}
 
-    public Entrada(List<Detalhe> itens, BigDecimal valor_total) {
+    public Entrada(List<Detalhe> itens, BigDecimal valorTotal) {
         this.itens = itens;
-        this.valor_total = valor_total;
+        this.valorTotal = valorTotal;
     }
 
     @Override
     public String toString() {
         StringBuilder entradaBuild = new StringBuilder();
         entradaBuild.append("Entradas{");
-        entradaBuild.append("id_entrada=").append(id);
-        entradaBuild.append(", data_entrada=").append(data_entrada);
-        entradaBuild.append(", valor_total=").append(valor_total);
+        entradaBuild.append("id_entrada=").append(idEntrada);
+        entradaBuild.append(", data_entrada=").append(dataEntrada);
+        entradaBuild.append(", valor_total=").append(valorTotal);
         entradaBuild.append(", itens=").append(itens);
         entradaBuild.append("}");
         return entradaBuild.toString();

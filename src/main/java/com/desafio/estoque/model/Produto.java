@@ -21,18 +21,18 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_produto")
-    private Long id;    
+    private Long idProduto;    
 
-    @Column(length = 150, nullable = false, unique = true)
+    @Column(name = "nome", length = 150, nullable = false, unique = true)
     private String nome;
 
-    @Column(nullable = false)
+    @Column(name = "ativo", nullable = false)
     private Boolean ativo;
 
-    @Column(nullable = false)
+    @Column(name = "saldo", nullable = false)
     private Integer saldo;
 
-    @Column(nullable = false)
+    @Column(name = "preco", nullable = false)
     @Positive(message = "O preço deverá ser maior que 0!")
     private BigDecimal preco;
 
@@ -49,7 +49,7 @@ public class Produto {
     public String toString() {
         StringBuilder produtoBuild = new StringBuilder();
         produtoBuild.append("Produtos{");
-        produtoBuild.append(", id_produto=").append(id);
+        produtoBuild.append(", id_produto=").append(idProduto);
         produtoBuild.append(", nome=").append(nome);
         produtoBuild.append(", ativo=").append(ativo);
         produtoBuild.append(", saldo=").append(saldo);
