@@ -2,7 +2,7 @@
 
 ### By: Júlio Mota
 
-Sistema de controle de estoque desenvolvido em Spring Boot, com cadastro de produtos e registro de entradas com atualização automática de saldo. Saída de estoque e relatórios estão em desenvolvimento.
+Sistema de controle de estoque desenvolvido em Spring Boot, com cadastro de produtos, registro de entradas com atualização automática de saldo, saída de estoque e relatórios.
 
 ### Tecnologias utilizadas
 
