@@ -1,46 +1,63 @@
-## Sistema de Estoque
+## Sistema de Controle de Estoque
 
 ### By: Júlio Mota
 
+Sistema de controle de estoque desenvolvido em Spring Boot, com cadastro de produtos e registro de entradas com atualização automática de saldo. Saída de estoque e relatórios estão em desenvolvimento.
 
-Instruções para testar este código:
+### Tecnologias utilizadas
 
-1. Instale este projeto pelo GitHub e descompacte em algum lugar de sua preferência no seu diretório.
-
-2. Instale o VS Code, Java(25 ou +), PostgreSQL(18 ou +) e o Maven(3.9.15 ou +).
-
-3. Instale as extensões do VS Code: "Extension Pack for Java", "Java", "Spring Boot Extension Pack" e o "Thunder Client".
-
-4. Vá em script.sql acessando 'estoque >> target >> sql' e copie o código que está dentro deste arquivo.
-
-5. Acesse o PostgreSQL, e dentro dele acesse 'Servers >> PostgreSQL'.
-
-6. Aperte com botão direito em Databases, depois em Query tool e cole oque copiou, depois aperte F5 em seu teclado para dar Play.
-
-7. Vá em application.properties acessando 'estoque >> src >> main >> resources'.
-
-8. Em "spring.datasource.username=" colado com o símbolo de '=' coloque o usuário do seu PostgreSQL que geralmente é 'postgres' e depois em "spring.datasource.password=" colado com o símbolo de '=' coloque a senha que você definiu para seu PostgreSQL.
-
-9. Aperte no botão de Play do seu VS Code dentro da classe 'EstoqueApplication.java'.
-
-10. No seu navegador de preferência digite na barra de endereço http://localhost:8080/produtos e entre (apenas isso, vai aparecer uma tela de "erro" que é comum e faz parte do processo).
-
-11. Vá no Thunder Client (símbolo de um raio na barra lateral esquerda do seu VS Code) e aperte em New Request.
-
-12. Aperte em GET e selecione POST ao abrir a caixa de escolha, e ao lado em "Enter url" escreva http://localhost:8080/produtos.
-
-13. Mais abaixo aperte em 'Body', e mais abaixo escolha a opção JSON.
-
-14. Em JSON Content digite: {
-                              "nome": "Mouse" (ou oque quiser dentro das aspas)
-                            }.
-
-15. Aperte no botão azul 'Send'. Tudo estando certo, ao lado aparecerá Status 200 (então está okay) e abaixo aparecerá: {
-                                                                                                                          "id": 1,
-                                                                                                                          "nome": "Mouse",
-                                                                                                                          "ativo": true,
-                                                                                                                          "saldo": 0
-                                                                                                                        }.
+- Java 25
+- Spring Boot 4
+- Spring Data JPA / Hibernate
+- Bean Validation
+- PostgreSQL
+- Docker / Docker Compose
+- Lombok
+- Maven
 
 
-Parabéns! Você executou corretamente a aplicação e viu que está funcionando corretamente.
+### Instruções para testar este código:
+
+1. Instale o Docker Desktop em https://www.docker.com/products/docker-desktop/ e abra-o para entrar em execução. Instale também o WSL se usar Windows.
+
+2. Baixe este projeto na sua máquina clonando pelo GitHub e adicione em algum lugar de sua preferência.
+
+3. Dentro da sua IDE de preferência, abra o projeto onde você o clonou e acesse o arquivo ".env.example", copie ele, cole no mesmo lugar e renomeie para apenas ".env".
+
+4. Dentro do ".env" defina o usuário e senha que o PostgreSQL terá. Se desejar troque os outros campos para a sua escolha.
+
+5. Execute no terminal da sua IDE o comando "docker compose up --build" para o Docker instalar tudo que for necessário e inclusive criar o banco de dados chamado 'estoque'.
+
+6. Escolha a forma de testar APIs de sua preferência (Postman, Thunder Client, Swagger, etc.).
+
+7. No seu navegador, digite na barra de endereço http://localhost:8081/produtos ou a rota que você escolheu e aperte Enter.
+
+8. Escolhendo a opção POST na sua ferramenta, escolha também a opção de informação em JSON.
+
+9. Em "JSON Content", insira:
+
+```json
+{
+  "nome": "Mouse"
+}
+```
+(ou o valor que quiser dentro das aspas)
+
+10. Aperte no botão de enviar ('Send'). Se tudo ocorrer bem, você verá Status 200 e a seguinte resposta:
+
+```json
+{
+  "id": 1,
+  "nome": "Mouse",
+  "ativo": true,
+  "saldo": 0
+}
+```
+
+
+Parabéns! Você executou a aplicação com êxito.
+
+
+### Licença
+
+Este projeto está sob a licença MIT — veja o arquivo [LICENSE](LICENSE) para mais detalhes.
