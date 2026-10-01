@@ -15,11 +15,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Positive;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "entrada")
 public class Entrada {
@@ -37,25 +42,7 @@ public class Entrada {
     @Positive(message = "O valor total deverá ser maior que 0!")
     private BigDecimal valorTotal;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "entrada", cascade = CascadeType.ALL)
     private List<Detalhe> itens;
-
-    public Entrada() {}
-
-    public Entrada(List<Detalhe> itens, BigDecimal valorTotal) {
-        this.itens = itens;
-        this.valorTotal = valorTotal;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder entradaBuild = new StringBuilder();
-        entradaBuild.append("Entradas{");
-        entradaBuild.append("id_entrada=").append(idEntrada);
-        entradaBuild.append(", data_entrada=").append(dataEntrada);
-        entradaBuild.append(", valor_total=").append(valorTotal);
-        entradaBuild.append(", itens=").append(itens);
-        entradaBuild.append("}");
-        return entradaBuild.toString();
-    }
 }
