@@ -9,11 +9,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Positive;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "produto")
 public class Produto {
@@ -27,34 +32,17 @@ public class Produto {
     private String nome;
 
     @Column(name = "ativo", nullable = false)
-    private Boolean ativo;
+    private Boolean ativo = true;
 
     @Column(name = "saldo", nullable = false)
-    private Integer saldo;
+    private Integer saldo = 0;
 
     @Column(name = "preco", nullable = false)
     @Positive(message = "O preço deverá ser maior que 0!")
     private BigDecimal preco;
 
-    public Produto() {}
-
     public Produto(String nome, BigDecimal preco) {
         this.nome = nome;
-        this.ativo = true;
-        this.saldo = 0;
         this.preco = preco;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder produtoBuild = new StringBuilder();
-        produtoBuild.append("Produtos{");
-        produtoBuild.append(", id_produto=").append(idProduto);
-        produtoBuild.append(", nome=").append(nome);
-        produtoBuild.append(", ativo=").append(ativo);
-        produtoBuild.append(", saldo=").append(saldo);
-        produtoBuild.append(", preco=").append(preco);
-        produtoBuild.append("}");
-        return produtoBuild.toString();
     }
 }
