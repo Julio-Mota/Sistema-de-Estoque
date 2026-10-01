@@ -12,7 +12,7 @@ public record DetalheResponse(
 
     public DetalheResponse (Detalhe detalhe) {
         this(
-            detalhe.getId(),
+            detalhe.getIdDetalhe(),
             detalhe.getQuantidade(),
             detalhe.getValor()
         );

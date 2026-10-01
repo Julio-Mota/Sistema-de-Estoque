@@ -15,9 +15,9 @@ public record EntradaResponse(
 
     public EntradaResponse(Entrada entrada) {
         this(
-            entrada.getId(),
-            entrada.getData_entrada(),
-            entrada.getValor_total(),
+            entrada.getIdEntrada(),
+            entrada.getDataEntrada(),
+            entrada.getValorTotal(),
             entrada.getItens()
         );
     }

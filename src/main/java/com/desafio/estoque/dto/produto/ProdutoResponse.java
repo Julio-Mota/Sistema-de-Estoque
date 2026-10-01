@@ -14,7 +14,7 @@ public record ProdutoResponse(
 
     public ProdutoResponse(Produto produto) {
         this(
-            produto.getId(),
+            produto.getIdProduto(),
             produto.getNome(),
             produto.getAtivo(),
             produto.getSaldo(),

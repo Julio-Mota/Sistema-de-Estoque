@@ -14,11 +14,11 @@ import com.desafio.estoque.repository.ProdutoRepository;
 public class EntradaService {
     
     private final EntradaRepository entradaRepository;
-
     private final ProdutoRepository produtoRepository;
 
-    public EntradaService(EntradaRepository entradaRepository) {
+    public EntradaService(EntradaRepository entradaRepository, ProdutoRepository produtoRepository) {
         this.entradaRepository = entradaRepository;
+        this.produtoRepository = produtoRepository;
     }
 
     public EntradaResponse entrarEntrada(EntradaRequest entradaRequest) {
