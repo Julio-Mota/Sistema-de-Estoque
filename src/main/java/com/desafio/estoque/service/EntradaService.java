@@ -28,10 +28,10 @@ public class EntradaService {
         }
 
         Entrada entrada = new Entrada(
-            entradaRequest.itens()
+            entradaRequest.Itens()
         );
 
-        Produto produto = produtoRepository.findByNome()
+        Produto produto = produtoRepository.findById();
 
         for (DetalheRequest itemRequest : entradaRequest.itens())
 

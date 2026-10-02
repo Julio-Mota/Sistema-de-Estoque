@@ -18,7 +18,7 @@ public class ProdutoService {
 
     public ProdutoResponse criarProduto(ProdutoRequest produtoRequest) {
         
-        if (produtoRepository.findByNome(produtoRequest.nome()).isPresent()) {
+        if (produtoRepository.findById(produtoRequest.id()).isPresent()) {
         throw new IllegalArgumentException("O produto já existe!");
         }
 
