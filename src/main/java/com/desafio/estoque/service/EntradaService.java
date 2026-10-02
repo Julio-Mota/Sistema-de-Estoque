@@ -31,7 +31,7 @@ public class EntradaService {
             entradaRequest.itens()
         );
 
-        Produto produto = produtoRepository.findById()
+        Produto produto = produtoRepository.findByNome()
 
         for (DetalheRequest itemRequest : entradaRequest.itens())
 
